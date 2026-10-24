@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoa Nắng — Tiệm hoa tươi tại TP.HCM</title>
+<meta name="description" content="Hoa Nắng — tiệm hoa tươi tại TP.HCM, giao hoa tươi trong ngày. Đặt hoa sinh nhật, khai trương, hoa cưới.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FDFBF7; --bg2:#F5EFE6; --card:#FFFFFF;
+    --text:#2B2622; --muted:#6E6259; --accent:#D97757; --accent-dark:#BC5836;
+    --green:#68785D; --line:#E7DED2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Be Vietnam Pro',Arial,Helvetica,sans-serif;font-size:17px;line-height:1.65}
+  h1,h2{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:600;line-height:1.2;margin:0 0 16px}
+  h1{font-size:56px;line-height:1.15}
+  h2{font-size:38px}
+  p{margin:0 0 16px}
+  a{color:var(--accent)}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  section{margin:96px 0}
+  .alt{background:var(--bg2)}
+  /* Header */
+  header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:10}
+  .header-inner{display:flex;align-items:center;gap:32px;padding:16px 24px;max-width:1200px;margin:0 auto}
+  .brand{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:600;color:var(--text);text-decoration:none;margin-right:auto}
+  nav{display:flex;gap:24px;flex-wrap:wrap}
+  nav a{color:var(--text);text-decoration:none;font-size:15px}
+  nav a:hover{color:var(--accent);text-decoration:underline}
+  .cta{display:inline-block;background:var(--accent);color:#fff !important;text-decoration:none;font-weight:600;font-size:16px;padding:14px 28px;border-radius:999px;border:0;cursor:pointer}
+  .cta:hover{background:var(--accent-dark)}
+  .header-inner .cta{white-space:nowrap}
+  /* Hero */
+  .hero-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:16px}
+  .hero-text{background:var(--bg);padding:32px 0 0;max-width:720px}
+  .badge{display:inline-block;background:var(--green);color:#fff;font-size:14px;font-weight:500;padding:8px 16px;border-radius:999px}
+  .hero-text p{color:var(--muted)}
+  /* Collection */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(43,38,34,0.08)}
+  .card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .card-body{padding:24px}
+  .card-body h3{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:500;margin:0 0 8px}
+  .card-body p{font-size:15px;line-height:1.6;color:var(--muted)}
+  .price-note{font-size:14px;color:var(--muted)}
+  .price-note b{color:var(--accent);font-size:17px}
+  .textlink{color:var(--text);text-decoration:underline}
+  .textlink:hover{color:var(--accent)}
+  /* Price table */
+  table{width:100%;border-collapse:collapse;background:var(--card)}
+  th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+  th{font-size:14px;color:var(--muted)}
+  td.price{font-weight:600;font-size:17px}
+  tr:hover td{background:var(--bg2)}
+  .note{font-size:14px;color:var(--muted);margin-top:12px}
+  /* Intro */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .two-col img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block}
+  .commit{list-style:none;padding:0;margin:24px 0 0}
+  .commit li{padding-left:32px;position:relative;margin-bottom:12px}
+  .commit li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600}
+  /* Reviews */
+  .stars{color:var(--accent);letter-spacing:2px;margin-bottom:12px}
+  .review-quote{font-style:italic}
+  .reviewer{display:flex;align-items:center;gap:12px;margin-top:16px}
+  .avatar{width:48px;height:48px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-size:20px;flex-shrink:0}
+  .reviewer span{font-size:14px;color:var(--muted)}
+  /* Contact + form */
+  .contact-lines p{margin-bottom:8px}
+  .contact-lines b{font-weight:500}
+  form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px;box-shadow:0 8px 24px rgba(43,38,34,0.08)}
+  label{display:block;font-size:14px;font-weight:500;margin:16px 0 6px}
+  label:first-child{margin-top:0}
+  input,select{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--text)}
+  input:focus,select:focus{outline:none;border-color:var(--accent-dark)}
+  form .cta{margin-top:24px;width:auto}
+  .form-msg{margin-top:16px;font-size:15px;color:var(--muted);display:none}
+  /* Footer */
+  footer{background:var(--bg2);padding:48px 0}
+  footer p{font-size:14px;color:var(--muted)}
+  footer .brand{font-size:24px}
+  @media (max-width:1024px){
+    .grid3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    body{font-size:16px}
+    h1{font-size:36px}
+    h2{font-size:28px}
+    section{margin:56px 0}
+    .container{padding:0 16px}
+    .header-inner{padding:12px 16px;flex-wrap:wrap;gap:12px}
+    nav{display:none}
+    .grid3,.two-col{grid-template-columns:1fr}
+    .hero-img{aspect-ratio:4/3}
+    .cta{width:100%;text-align:center}
+    .header-inner .cta{width:auto}
+    form{padding:24px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#">Hoa Nắng</a>
+    <nav>
+      <a href="#bo-suu-tap">Bộ sưu tập</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#nhan-xet">Nhận xét</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <a class="cta" href="#lien-he">Đặt hoa ngay</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- 1. Mở đầu -->
+  <section>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1800&auto=format&fit=crop" alt="Bó hoa tươi nhiều màu sắc (ảnh mẫu)">
+    <div class="hero-text">
+      <h1>Hoa Nắng</h1>
+      <p>Tiệm hoa tươi tại TP.HCM — hoa mới mỗi ngày, giao hoa tươi trong ngày.</p>
+      <p><a class="cta" href="#lien-he">Đặt hoa ngay</a></p>
+      <p><span class="badge">Giao hoa tươi trong ngày</span></p>
+    </div>
+  </section>
+
+  <!-- 2. Bộ sưu tập -->
+  <section id="bo-suu-tap">
+    <h2>Bộ sưu tập theo dịp</h2>
+    <div class="grid3">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1200&auto=format&fit=crop" alt="Bó hoa sinh nhật rực rỡ (ảnh mẫu)">
+        <div class="card-body">
+          <h3>Sinh nhật</h3>
+          <p>Bó hoa tươi rực rỡ, gửi lời chúc ngọt ngào nhất.</p>
+          <p class="price-note">Giá từ <b>350.000đ</b> — tham khảo</p>
+          <p><a class="textlink" href="#bang-gia">Xem bảng giá</a></p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=1200&auto=format&fit=crop" alt="Lẵng hoa khai trương sang trọng (ảnh mẫu)">
+        <div class="card-body">
+          <h3>Khai trương</h3>
+          <p>Lẵng hoa sang trọng, chúc khai trương hồng phát.</p>
+          <p class="price-note">Giá từ <b>800.000đ</b> — tham khảo</p>
+          <p><a class="textlink" href="#bang-gia">Xem bảng giá</a></p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop" alt="Hoa cưới trang nhã trên bàn tiệc (ảnh mẫu)">
+        <div class="card-body">
+          <h3>Hoa cưới</h3>
+          <p>Hoa cầm tay và hoa trang trí nhẹ nhàng, tinh tế.</p>
+          <p class="price-note">Giá từ <b>1.200.000đ</b> — tham khảo</p>
+          <p><a class="textlink" href="#bang-gia">Xem bảng giá</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. Bảng giá -->
+  <section id="bang-gia">
+    <h2>Bảng giá tham khảo</h2>
+    <table>
+      <thead>
+        <tr><th>Tên mẫu</th><th>Dịp phù hợp</th><th>Kích cỡ</th><th>Giá tham khảo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nắng Mai</td><td>Sinh nhật</td><td>Vừa</td><td class="price">350.000đ</td></tr>
+        <tr><td>Nắng Hồng</td><td>Sinh nhật</td><td>Lớn</td><td class="price">550.000đ</td></tr>
+        <tr><td>Khai Trương Vượng</td><td>Khai trương</td><td>Lẵng lớn</td><td class="price">800.000đ</td></tr>
+        <tr><td>Khai Trương Phát</td><td>Khai trương</td><td>Kệ 2 tầng</td><td class="price">1.500.000đ</td></tr>
+        <tr><td>Cô Dâu Nắng</td><td>Hoa cưới</td><td>Bó cầm tay</td><td class="price">1.200.000đ</td></tr>
+        <tr><td>Tiệc Nắng</td><td>Hoa cưới</td><td>Trang trí bàn tiệc</td><td class="price">2.500.000đ</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Giá chỉ mang tính tham khảo theo mẫu, giá chốt theo yêu cầu cụ thể khi đặt hoa.</p>
+  </section>
+
+  <!-- 4. Giới thiệu -->
+  <section id="gioi-thieu">
+    <div class="two-col">
+      <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?q=80&w=1200&auto=format&fit=crop" alt="Hoa tươi tại tiệm Hoa Nắng (ảnh mẫu)">
+      <div>
+        <h2>Hoa tươi mỗi ngày, từ tiệm nhỏ đầy nắng</h2>
+        <p>Hoa Nắng là tiệm hoa tươi tại TP.HCM. Mỗi sáng, tiệm chọn hoa mới cắt, bó và gói thủ công theo từng đơn đặt — không hoa tồn qua ngày. Dù là sinh nhật, khai trương hay ngày cưới, tiệm đều muốn bó hoa đến tay bạn vẫn tươi như vừa rời vườn.</p>
+        <ul class="commit">
+          <li>Giao hoa tươi trong ngày tại TP.HCM</li>
+          <li>Hoa mới cắt mỗi sáng</li>
+          <li>Gói hoa theo yêu cầu và ngân sách</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Nhận xét -->
+  <section id="nhan-xet">
+    <h2>Khách hàng nói gì</h2>
+    <div class="grid3">
+      <article class="card">
+        <div class="card-body">
+          <div class="stars">★★★★★</div>
+          <p class="review-quote">“Bó hoa giao đúng giờ, hoa tươi và thơm. Người nhận rất thích, mình sẽ đặt lại.”</p>
+          <div class="reviewer"><div class="avatar">M</div><span>Mai Anh (nhận xét mẫu)</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <div class="stars">★★★★★</div>
+          <p class="review-quote">“Lẵng khai trương đẹp, sang, giao tận nơi cẩn thận. Cảm ơn tiệm rất nhiều.”</p>
+          <div class="reviewer"><div class="avatar">T</div><span>Tuấn (nhận xét mẫu)</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <div class="stars">★★★★★</div>
+          <p class="review-quote">“Hoa cưới nhẹ nhàng đúng ý mình, màu hoa lên ảnh rất đẹp.”</p>
+          <div class="reviewer"><div class="avatar">L</div><span>Linh (nhận xét mẫu)</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. Liên hệ + form -->
+  <section id="lien-he">
+    <div class="two-col">
+      <div class="contact-lines">
+        <h2>Liên hệ &amp; đặt hoa</h2>
+        <p><b>Địa chỉ:</b> [CẦN BỔ SUNG]</p>
+        <p><b>Điện thoại/Zalo:</b> [CẦN BỔ SUNG]</p>
+        <p><b>Giờ mở cửa:</b> [CẦN BỔ SUNG]</p>
+        <p><b>Email liên hệ demo:</b> qa@m-software.test</p>
+        <p class="note">Điền form bên cạnh, tiệm sẽ liên hệ xác nhận đơn hoa.</p>
+      </div>
+      <form id="order-form">
+        <label for="name">Họ tên *</label>
+        <input id="name" name="name" type="text" required placeholder="Họ tên của bạn">
+        <label for="phone">Số điện thoại *</label>
+        <input id="phone" name="phone" type="tel" required placeholder="Số điện thoại liên hệ">
+        <label for="type">Mẫu hoa muốn đặt *</label>
+        <select id="type" name="type" required>
+          <option value="">— Chọn mẫu hoa —</option>
+          <option>Sinh nhật</option>
+          <option>Khai trương</option>
+          <option>Hoa cưới</option>
+          <option>Khác</option>
+        </select>
+        <label for="date">Ngày giao hoa *</label>
+        <input id="date" name="date" type="date" required>
+        <button class="cta" type="submit">Gửi yêu cầu đặt hoa</button>
+        <p class="form-msg" id="form-msg">Đã ghi nhận thông tin tại trang này. Đây là bản demo chưa gửi dữ liệu — vui lòng gọi [CẦN BỔ SUNG] để tiệm xác nhận đơn hoa.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p><span class="brand">Hoa Nắng</span></p>
+    <p>Địa chỉ: [CẦN BỔ SUNG] · Điện thoại: [CẦN BỔ SUNG]</p>
+    <p>Hoa Nắng — Landing page giới thiệu tiệm hoa tươi tại TP.HCM.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('order-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-msg').style.display = 'block';
+  });
+</script>
+</body>
+</html>
